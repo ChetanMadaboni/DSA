@@ -1,0 +1,5 @@
+package com.wiley.collections;
+
+public class Student {
+
+}

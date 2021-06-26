@@ -1,0 +1,25 @@
+interface test{
+	public void print(String name);
+}
+public class Lambda {
+
+	public static void main(String[] args) {
+		
+//		test t1=new test() {
+//			public void print(String name) {
+//				System.out.println("Hie "+name);
+//			}
+//		};
+		test t1=(name)->{
+			System.out.println("Hie8"+name);
+		};
+		t1.print("chetan");
+	}
+
+//	@Override
+//	public void print(String name) {
+//		System.out.println("main");
+//		
+//	}
+
+}

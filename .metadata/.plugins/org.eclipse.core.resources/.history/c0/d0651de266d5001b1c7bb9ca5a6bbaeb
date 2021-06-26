@@ -1,0 +1,18 @@
+package com.wiley.collections;
+
+import java.util.*;
+
+public class Studentmain {
+
+	public static void main(String[] args) {
+		List<Student> list=new ArrayList<Student>();
+		Student s1=new Student(1,20,"chetan");
+		Student s2=new Student(2,10,"Koushik");
+		Student s3=new Student(0,30,"amresh");
+		Collections.sort(list);
+		for(Student s:list) {
+			System.out.println(s.getName()+" "+s.getMarks());
+		}
+	}
+
+}

@@ -1,0 +1,13 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Streams {
+	public static void main(String []args) {
+		List<Student> st=new ArrayList<Student>();
+		st.add(new Student(1,40,"Hari"));
+		st.add(new Student(2,70,"chetan"));
+		st.add(new Student(3,60,"ram"));
+		st.add(new Student(4,90,"sati"));
+		st.stream().filter(s->s.getMarks()>70).map(s->s.getMarks()).forEach(System.out::println);
+	}
+}

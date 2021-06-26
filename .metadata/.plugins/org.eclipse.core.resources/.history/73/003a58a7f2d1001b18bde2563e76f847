@@ -1,0 +1,49 @@
+package com.wiley.tree;
+
+import com.wiley.tree.LevelOrder.Node;
+
+public class LCA {
+	Node root;
+	class Node{
+		int key;
+		Node left;
+		Node right;
+		Node(){
+			
+		}
+		Node(int key){
+			this.key=key;
+		}
+		Node(int key,Node left,Node right){
+			this.key=key;
+			this.left=left;
+			this.right=right;
+		}
+	}
+	
+	static Node lca(Node root,int p,int q) {
+		if(root!=null) {
+			return root;
+		}
+		Node left=lca(root.left,p,q);
+		Node right=lca(root.right,p,q);
+		if(left !=null || right!=null) {
+			return root;
+			
+		}
+		return (left!=null)?left:right;
+	} 
+	public static void main(String[] args) {
+		LCA lo=new LCA();
+		lo.root=new Node(1);
+		lo.root.left=new Node(2);
+		lo.root.right=new Node(3);
+		
+		lo.root.left.left=new Node(4);
+		lo.root.left.right=new Node(5);
+		lo.root.right.left=new Node(6);
+		lo.root.right.right=new Node(7);
+			
+	}
+
+}

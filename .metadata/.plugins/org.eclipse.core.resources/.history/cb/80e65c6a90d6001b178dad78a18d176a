@@ -1,0 +1,10 @@
+package com.wiley.queue;
+
+public class Quarr {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

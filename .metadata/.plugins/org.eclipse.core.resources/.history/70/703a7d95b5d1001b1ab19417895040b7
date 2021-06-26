@@ -1,0 +1,54 @@
+package com.wiley.tree;
+
+import java.util.LinkedList;
+
+class Node{
+	int key;
+	Node left;
+	Node right;
+	Node(){
+		
+	}
+	Node(int key){
+		this.key=key;
+	}
+	Node(int key,Node left,Node right){
+		this.key=key;
+		this.left=left;
+		this.right=right;
+	}
+	
+}
+
+public class LevelOrder {
+	//Node root;
+	static void levelOrder(Node root) {
+		Queue<Node> qu=new LinkedList<>();
+		qu.add(root);
+		while(!qu.isEmpty()) {
+			int size=qu.size();
+			while(--size>0) {
+				Node cur=qu.remove();
+				System.out.println(cur.key);
+				if(cur.left!=null) {
+					qu.add(cur.left);
+				}
+				if(cur.right!=null) {
+					qu.add(cur.right);
+				}
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		Node left=new Node(2);
+		Node right=new Node(3);
+		Node root =new Node(1,left,right);
+		left.left=new Node(4);
+		left.right=new Node(5);
+		right.left=new Node(6);
+		right.right=new Node(7);
+		levelOrder(root);
+	}
+
+}

@@ -1,0 +1,30 @@
+package com.wiley.tree;
+class Node{
+	int key;
+	Node left;
+	Node right;
+	public Node(int key){
+		this.key=key;
+	}
+	Node(int key,Node left,Node rigth){
+		this.left=left;
+		this.key=key;
+		this.right=right;
+	}
+	Node(){
+		
+	}
+}
+public class TreeNormal {
+	Node root;
+	
+
+	public static void main(String[] args) {
+		Node left=new Node(1);
+		Node right=new Node(2);
+		Node root=new Node(1,left,right);
+		
+
+	}
+
+}

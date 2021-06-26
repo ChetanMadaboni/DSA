@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+D:\Wiley\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4031757905.index
+4207606346.index
+1627673260.index
+3485365961.index
+4129121364.index
+2785889402.index
+1122515166.index

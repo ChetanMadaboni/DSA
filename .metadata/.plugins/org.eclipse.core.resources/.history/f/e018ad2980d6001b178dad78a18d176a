@@ -1,0 +1,43 @@
+package com.wiley.stack;
+
+import java.util.LinkedList;
+import java.util.Queue;
+//in implementing stack using queue;
+//algorithm
+//for push-> fist we add into q1 array;
+//then we pop all the elements from q2->q1;
+//then swap the elements between q1 and q2;
+
+public class StackUQu {
+	static Queue<Integer> q1=new LinkedList<Integer>();
+	static Queue<Integer> q2=new  LinkedList<Integer>();
+	
+	static void push(Integer n) {
+		q1.add(n);
+		while(!q2.isEmpty()) {
+			q1.add(q2.poll());
+		}
+		
+		while(!q1.isEmpty()) {
+			q2.add(q1.poll());
+		}
+	}
+	static void pop() {
+		q2.poll();
+	}
+	static void display() {
+		System.out.println(q2);
+	}
+	public static 
+	void main(String[] args) {
+		push(new Integer(3));
+		push(new Integer(4));
+		push(new Integer(2));
+		push(new Integer(1));
+		display();
+		
+		
+
+	}
+
+}

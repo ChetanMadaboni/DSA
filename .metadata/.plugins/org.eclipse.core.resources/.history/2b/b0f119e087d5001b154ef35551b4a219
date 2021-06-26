@@ -1,0 +1,22 @@
+interface test{
+	public void print(String name);
+}
+public class Lambda implements test{
+
+	public static void main(String[] args) {
+		
+		test t1=new test() {
+			public void print(String name) {
+				System.out.println("Hie "+name);
+			}
+		};
+		t1.print("chetan");
+	}
+
+	@Override
+	public void print(String name) {
+		System.out.println("main");
+		
+	}
+
+}

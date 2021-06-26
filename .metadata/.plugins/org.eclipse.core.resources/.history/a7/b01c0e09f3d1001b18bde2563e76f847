@@ -1,0 +1,47 @@
+
+
+public class LCA {
+	Node root;
+	class Node{
+		int key;
+		Node left;
+		Node right;
+		public Node(){
+			
+		}
+		public Node(int key){
+			this.key=key;
+		}
+		 public Node(int key,Node left,Node right){
+			this.key=key;
+			this.left=left;
+			this.right=right;
+		}
+	}
+	
+	static Node lca(Node root,int p,int q) {
+		if(root!=null) {
+			return root;
+		}
+		Node left=lca(root.left,p,q);
+		Node right=lca(root.right,p,q);
+		if(left !=null || right!=null) {
+			return root;
+			
+		}
+		return (left!=null)?left:right;
+	} 
+	public static void main(String[] args) {
+		LCA lca=new LCA();
+		lca.root=new Node(1);
+		lca.root.left=new Node(2);
+		lca.root.right=new Node(3);
+		
+		lca.root.left.left=new Node(4);
+		lca.root.left.right=new Node(5);
+		lca.root.right.left=new Node(6);
+		lca.root.right.right=new Node(7);
+			
+	}
+
+}

@@ -1,0 +1,63 @@
+package com.wiley.queue;
+
+public class QuLL {
+	static Node head;
+	static int front=0,rear=-1,n,c;
+	static class Node{
+		int data;
+		Node next;
+		Node(int data){
+			this.data=data;
+		}
+	}
+	
+	static void Enque(Node node){
+		if(c==n-1) {
+			System.out.println("Overflow");
+		}else {
+			Node cur=node;
+			if(head==null) {
+				head=node;
+				front=node.data;
+			}else {
+				while(cur.next!=null) {
+					cur=cur.next;
+				}
+				cur.next=node;
+				rear=node.data;
+			}
+
+			
+		}
+	}
+	
+	static void Deque() {
+		if(c>=0) {
+			head=head.next;
+			front=head.data;	
+		}else {
+			System.out.println("Underflow");
+		}
+		
+	}
+	static void front() {
+		System.out.println(front);
+	}
+	 static void rear() {
+		System.out.println(rear);
+	}
+	public static void main(String[] args) {
+		n=4;
+		Enque(new Node(3));
+		Enque(new Node(2));
+		Enque(new Node(4));
+		Enque(new Node(1));
+		Enque(new Node(1));
+		front();
+		//rear();
+		Deque();
+		front();
+		
+	}
+
+}

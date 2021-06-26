@@ -1,0 +1,21 @@
+package com.wiley.stack;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class StackUQu {
+	static Queue<Integer> q1=new LinkedList<Integer>();
+	static Queue<Integer> q2=new  LinkedList<Integer>();
+	
+	static void push(Integer n) {
+		q2.add(n);
+		System.out.println("bfr"+q2);
+		System.out.println(q2.poll());
+		System.out.println(q2);
+	}
+	public static void main(String[] args) {
+		push(new Integer(2));
+
+	}
+
+}

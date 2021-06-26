@@ -1,0 +1,54 @@
+package com.wiley.tree;
+
+public class IsBst {
+	static class Node{
+		int key;
+		Node left;
+		Node right;
+		Node(){
+			
+		}
+		Node(int key,Node left,Node right){
+			this.key=key;
+			this.left=left;
+			this.right=right;
+		}
+		Node(int key){
+			this.key=key;
+		}
+	}
+	static void isBST(Node root,int flag,Node prev ) {
+		if(root==null) {
+			return ;
+		}
+		isBST(root.left,flag,prev);
+		if(prev!=null && root.key<=prev.key) {
+			flag=0;
+			return;
+		}
+		prev=root;
+		isBST(root.right,flag,prev);
+		
+	}
+	static void Bst(Node root){
+		int flag=1;
+		Node prev=null;
+		isBST(root,flag,prev);
+		if(flag==1) {
+			System.out.println("is a binary tree");
+		}else {
+			System.out.println("not a binary tree");
+		}
+	}
+	public static void main(String[] args) {
+		Node root =new Node(9);
+		root.left=new Node(5);
+		root.right=new Node(11);
+		root.left.left=new Node(3);
+		root.left.right=new Node(7);
+		root.right.left=new Node(10);
+		root.right.right=new Node(12);
+		Bst(root);
+	}
+
+}
